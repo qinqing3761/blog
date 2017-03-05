@@ -61,6 +61,50 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-AngularJS ui-select用法" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/03/05/AngularJS ui-select用法/" class="article-date">
+  <time datetime="2017-03-05T02:41:12.000Z" itemprop="datePublished">2017-03-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/05/AngularJS ui-select用法/">AngularJS ui-select用法</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>使用<code>ui-select</code><br>首先要安装ui-select和angular-sanitize，它们的npm指令分别为<br><a href="https://www.npmjs.com/package/angular-sanitize">https://www.npmjs.com/package/angular-sanitize</a><br>npm指令：<br><code>npm install angular-sanitize</code><br>Then add ngSanitize as a dependency for your app: </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">angular.module(<span class="string">'myApp'</span>, [<span class="built_in">require</span>(<span class="string">'angular-sanitize'</span>)]);</div></pre></td></tr></table></figure>
+        
+          <p class="article-more-link">
+            <a href="/2017/03/05/AngularJS ui-select用法/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/03/05/AngularJS ui-select用法/" data-id="cizw59p6m00045bwvtormwmr2" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/AngularJS/">AngularJS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ui-select/">ui-select</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Angular2 问题总结" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/12/30/Angular2 问题总结/" class="article-date">
@@ -76,12 +120,12 @@
         <hr>
 <h2 id="AngularJS-2-问题总结"><a href="#AngularJS-2-问题总结" class="headerlink" title="AngularJS 2 问题总结"></a>AngularJS 2 问题总结</h2><ol>
 <li>出现“An invalid form control with name=’’ is not focusable”：查看是否form中的button都设置了type属性，如果未设置，会出现点击“enter”键，form自动关闭的问题，从而进一步引发这个问题 </li>
-<li>必须要先判断phoneNumber.errors存在与否，才能取phoneNumber.errors.required，否则会出错（required is null）</li>
-<li>Angular2使用pattern时，正则表达式的”//“必须去掉，即由</li>
-</ol>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"> e.g. : ng-pattern=<span class="regexp">/^1[3|4|5|7|8][0-9]\d&#123;8&#125;$/</span><span class="string">`变为`</span>pattern=“/^<span class="number">1</span>[<span class="number">3</span>|<span class="number">4</span>|<span class="number">5</span>|<span class="number">7</span>|<span class="number">8</span>][<span class="number">0</span><span class="number">-9</span>]\d&#123;<span class="number">8</span>&#125;$/</div></pre></td></tr></table></figure>
-<p>否则patter判断会出错,参考资料<br><a href="http://stackoverflow.com/questions/34559212/how-to-add-form-validation-pattern-in-angular2" target="_blank" rel="external">http://stackoverflow.com/questions/34559212/how-to-add-form-validation-pattern-in-angular2</a><br>4.string 枚举方法<br><figure class="highlight typescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">enum</span> Language &#123;</div><div class="line">   English = &lt;<span class="built_in">any</span>&gt;<span class="string">"English"</span>,</div><div class="line">   German = &lt;<span class="built_in">any</span>&gt;<span class="string">"German"</span>,</div><div class="line">   French = &lt;<span class="built_in">any</span>&gt;<span class="string">"French"</span>,</div><div class="line">   Italian = &lt;<span class="built_in">any</span>&gt;<span class="string">"Italian"</span></div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(<span class="string">"English == "</span> + Language.English); <span class="comment">//English == English</span></div><div class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> (Language.English));<span class="comment">//string</span></div></pre></td></tr></table></figure></p>
-
+<li>必须要先判断phoneNumber.errors存在与否，才能取phoneNumber.errors.required，否则会出错（required is null）
+        
+          <p class="article-more-link">
+            <a href="/2016/12/30/Angular2 问题总结/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
@@ -140,15 +184,29 @@
 
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AngularJS/">AngularJS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ui-select/">ui-select</a></li></ul>
+    </div>
+  </div>
+
 
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/AngularJS/" style="font-size: 10px;">AngularJS</a> <a href="/tags/ui-select/" style="font-size: 10px;">ui-select</a>
+    </div>
+  </div>
+
   
     
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a></li></ul>
     </div>
   </div>
 
@@ -159,6 +217,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2017/03/05/AngularJS ui-select用法/">AngularJS ui-select用法</a>
+          </li>
         
           <li>
             <a href="/2016/12/30/Angular2 问题总结/">(no title)</a>
@@ -180,7 +242,7 @@
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2016 John Doe<br>
+      &copy; 2017 John Doe<br>
       Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
