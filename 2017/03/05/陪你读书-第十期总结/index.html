@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>陪你读书-JS-第十期总结 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="一、JS中数据类型基础数据类型：string、number、boolean、undefined、null复杂数据类型：object">
+<meta property="og:type" content="article">
+<meta property="og:title" content="陪你读书-JS-第十期总结">
+<meta property="og:url" content="http://yoursite.com/2017/03/05/陪你读书-第十期总结/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="一、JS中数据类型基础数据类型：string、number、boolean、undefined、null复杂数据类型：object">
+<meta property="og:updated_time" content="2017-03-05T09:24:53.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="陪你读书-JS-第十期总结">
+<meta name="twitter:description" content="一、JS中数据类型基础数据类型：string、number、boolean、undefined、null复杂数据类型：object">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-陪你读书-第十期总结" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/03/05/陪你读书-第十期总结/" class="article-date">
+  <time datetime="2017-03-05T04:15:12.000Z" itemprop="datePublished">2017-03-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      陪你读书-JS-第十期总结
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="一、JS中数据类型"><a href="#一、JS中数据类型" class="headerlink" title="一、JS中数据类型"></a>一、JS中数据类型</h3><p>基础数据类型：string、number、boolean、undefined、null<br>复杂数据类型：object<br><a id="more"></a></p>
+<h3 id="二、undefined和null的区别："><a href="#二、undefined和null的区别：" class="headerlink" title="二、undefined和null的区别："></a>二、undefined和null的区别：</h3><p>1、undefined是个关键字，而null不是关键字<br>2、null的本质是一个空的对象，而undefined其实是windows的一个属性，叫做未定义，它其实是一个已经定义了的属性，只不过这个属性的值叫做未定义。<br>3、当使用typeof 去查找的时候<br>     typeof（undefined）= “undefined”<br>     typeof（null） = “object”<br>4、当共同转换为number时，null返回为0，undefined返回为NaN </p>
+<h3 id="三、三个开发上的建议"><a href="#三、三个开发上的建议" class="headerlink" title="三、三个开发上的建议"></a>三、三个开发上的建议</h3><p>1、当你需要新建一个变量并且需要赋值，或者新建一个对象需要为对象的属性赋值时，可以用null<br>2、但判断一个函数的某一个参数是否传入的时候通常使用 ===“undefined”进行判断<br>3、检测某一个值是否存在或者是否为null用 ==null 进行判断 </p>
+<h3 id="四、只有6个值在进行bool类型转换的时候可以转换为false"><a href="#四、只有6个值在进行bool类型转换的时候可以转换为false" class="headerlink" title="四、只有6个值在进行bool类型转换的时候可以转换为false"></a>四、只有6个值在进行bool类型转换的时候可以转换为false</h3><p>这6个值为：undefined、null、 +0、-0、””、NaN           空数据和{}为true </p>
+<h3 id="五、数值类型：常规的数字，无穷，NaN"><a href="#五、数值类型：常规的数字，无穷，NaN" class="headerlink" title="五、数值类型：常规的数字，无穷，NaN"></a>五、数值类型：常规的数字，无穷，NaN</h3><p>小数：0.1 + 0.2 != 0.3 原因为js表示数字时是用二进制表示数字的 0.1x10 + 0.2x10 = 3，3/10 = 0.3<br>NaN: not a number 是一个不等于任何数字的数字类型，typeof（NaN）= “number”，NaN !== NaN，它是唯一一个不等于它本身的数字 </p>
+<p>字符串：本质是一个unicode编码的序列，length属性返回的是unicode编码的长度，一个汉字返回的长度是1<br>理论上只有对象（Object）可以使用属性和方法的引用，字符串引用方法时，会先判断表达式是不是对象，若不是对象，就会直接报错，在所有的基本类型中，只有null和undefined不能转换为对象（Object） </p>
+<p>复杂数据类型：object，是由属性和属性的值所组成的无序列表的合集 </p>
+<h3 id="六、对象和原始类型的区别："><a href="#六、对象和原始类型的区别：" class="headerlink" title="六、对象和原始类型的区别："></a>六、对象和原始类型的区别：</h3><p>1、对象有属性<br>2、对象有方法：方法本身是一种特殊的方法<br>3、对象是可以改变的 </p>
+<h3 id="七、对象的分类："><a href="#七、对象的分类：" class="headerlink" title="七、对象的分类："></a>七、对象的分类：</h3><p>1、内部对象：错误对象<br>常用对象：String，Boolean，正则表达式，Object，Number，Function，Array，Date<br>内置对象：Global，Math，Json 与其他对象的区别就是，如果使用内置对象的时候是不需要用new操作符的，可以直接使用<br>2、数组对象：Windows，和JS本身运行环境有关系的<br>3、自定义对象： </p>
+<h3 id="八、基础数据类型和对象的转化："><a href="#八、基础数据类型和对象的转化：" class="headerlink" title="八、基础数据类型和对象的转化："></a>八、基础数据类型和对象的转化：</h3><p>1、原始类型<code>&lt;-&gt;</code>原始类型<br>  （1原始类型<code>&lt;-&gt;</code>字符串，直接加俩“”<br>          Boolean <code>-&gt;</code> string :”true” or “false”,<br>          Number <code>-&gt;</code> String:<br>               10.toString() = 10（默认以十进制为基）<br>               基模式：10.toString(2) = 1010, 10.toString(8) = 12, 10.toString(16) = A,<br>    (2)原始类型<code>&lt;-&gt;</code>数字 undefined<code>-&gt;</code> NaN, null<code>-&gt;</code>0, true<code>-&gt;</code> 1,false<code>-&gt;</code>0,”123”<code>-&gt;</code>123,”1abc”<code>-&gt;</code>NaN,””<code>-&gt;</code>0 </p>
+<p>ECMAScript 提供了两种把非数字的原始值转换成数字的方法，即 parseInt() 和 parseFloat()。<br>正如您可能想到的，前者把值转换成整数，后者把值转换成浮点数。只有对 String 类型调用这些方法，它们才能正确运行；对其他类型返回的都是 NaN。<br>parseInt(12345red) = 12345,  parseInt(“AF”, 16) = 175,(基模式) </p>
+<p>parseFloat()只能是十进制，不能有基模式，<br>第一个出现的小数点是有效字符。如果有两个小数点，第二个小数点将被看作无效的。parseFloat() 会把这个小数点之前的字符转换成数字。这意味着字符串 “11.22.33” 将被解析成 11.22。<br>使用 parseFloat() 方法的另一不同之处在于，字符串必须以十进制形式表示浮点数，而不是用八进制或十六进制。该方法会忽略前导 0，所以八进制数 0102 将被解析为 102。对于十六进制数 0xA，该方法将返回 NaN，因为在浮点数中，x 不是有效字符。（注释：经测试，具体的浏览器实现会返回 0，而不是 NaN。）<br> (3) 原始类型<code>&lt;-&gt;</code>bool<br>只有6个值在进行bool类型转换的时候可以转换为false<br>这6个值为：undefined、null、 +0、-0、””、NaN 空数据和{}为true </p>
+<p>强制类型转换<br>您还可以使用强制类型转换（type casting）来处理转换值的类型。使用强制类型转换可以访问特定的值，即使它是另一种类型的。<br>编者注：cast 有“铸造”之意，很贴合“强制转换”的意思。<br>ECMAScript 中可用的 3 种强制类型转换如下：</p>
+<pre><code>•    Boolean(value) - 把给定的值转换成 Boolean 型；
+•    Number(value) - 把给定的值转换成数字（可以是整数或浮点数）；
+•    String(value) - 把给定的值转换成字符串；强制转换成字符串和调用 
+</code></pre><p>toString() 方法的唯一不同之处在于，对 null 和 undefined 值强制类型转换可以生成字符串而不引发错误：</p>
+<pre><code>•    var s1 = String(null);     //&quot;null&quot;
+•    var oNull = null;
+•    var s2 = oNull.toString();      //会引发错误 
+</code></pre><p>用这三个函数之一转换值，将创建一个新值，存放由原始值直接转换成的值。这会造成意想不到的后果。</p>
+<p>Number() 函数<br>Number() 函数的强制类型转换与 parseInt() 和 parseFloat() 方法的处理方式相似，只是它转换的是整个值，而不是部分值。<br>还记得吗，parseInt() 和 parseFloat() 方法只转换第一个无效字符之前的字符串，因此 “1.2.3” 将分别被转换为 “1” 和 “1.2”。<br>用 Number() 进行强制类型转换，”1.2.3” 将返回 NaN，因为整个字符串值不能转换成数字。如果字符串值能被完整地转换，Number() 将判断是调用 parseInt() 方法还是 parseFloat() 方法。<br>2、原始类型<code>&lt;-&gt;</code>对象<br>只有null和undefined不能转换为对象（Object） </p>
+<p>数字和boo<code>-&gt;</code>对象:l转换为object时为一个对象，对象的名字叫原始值 Object (true) = [Boolean: true]，Object (3) = [Number: 3]<br>字符串<code>-&gt;</code>对象 Object (“abc”) = [String: ‘abc’] </p>
+<p>对象<code>-&gt;</code>boolean 均为true<br>对象<code>-&gt;</code>字符串 先toString后valueOf，若valueOf后返回结果是原始类型，若返回结果result是原始类型，则result<code>-&gt;</code>字符串的转换，<br>对象<code>-&gt;</code>数字，先valueOf后toString，若valueOf后返回结果是原始类型，则直接返回回来，若还是object，则再调用toString，若返回结果result是原始类型，则result<code>-&gt;</code>数字的转换，若不是，则报错（Number([])=0,Number({})=NaN）<br>PS:toString( )是可以接收参数的，表示的是几进制的数，范围为2-36,Math.random().toString(36)生成序列书<br>对象的属性访问原理，a. a[] </p>
+<h3 id="九、变量相关"><a href="#九、变量相关" class="headerlink" title="九、变量相关"></a>九、变量相关</h3><p>变量：定义变量，<br>使用var： 局部变量（作用于是当前的函数），创建的变量不可删除，变量会被提前<br>不使用var： 全局变量，创建的变量可以删除（windows上面的一个属性），变量不会被提前 </p>
+<h3 id="十、一元操作符：很高的优先级，仅在-之后"><a href="#十、一元操作符：很高的优先级，仅在-之后" class="headerlink" title="十、一元操作符：很高的优先级，仅在. , () []之后"></a>十、一元操作符：很高的优先级，仅在. , () []之后</h3><p>+、-、前++、后++、前—、后–、！、typeof、void、delete<br>typeof后面的括号（）最好写吧，<br>！转换成布尔值，Boolean（3） == !!(3)    String（3）== 3+””       +”123” == Number(123)<br>delete<br>delete 运算符删除对以前定义的对象属性或方法的引用。例如：<br>var o = new Object;<br>o.name = “David”;<br>alert(o.name);  //输出 “David”<br>delete o.name;<br>alert(o.name);  //输出 “undefined”</p>
+<p>在这个例子中，删除了 name 属性，意味着强制解除对它的引用，将其设置为 undefined（即创建的未初始化的变量的值）。<br>delete 运算符不能删除开发者未定义的属性和方法。例如，下面的代码将引发错误：<br>delete o.toString;</p>
+<p>即使 toString 是有效的方法名，这行代码也会引发错误，因为 toString() 方法是原始的 ECMAScript 方法，不是开发者定义的。</p>
+<p>一元加法和一元减法<br>尽管一元加法对数字无作用，但对字符串却有有趣的效果，会把字符串转换成数字。<br>var sNum = “20”;<br>alert(typeof sNum);     //输出 “string”<br>var iNum = +sNum;<br>alert(typeof iNum);     //输出 “number”</p>
+<p>位运算 NOT<br>位运算 NOT 由否定号（~）表示，它是 ECMAScript 中为数不多的与二进制算术有关的运算符之一。位运算 NOT 实质上是对数字求负，然后减 1，</p>
+<p>逻辑 NOT（!）逻辑 NOT 运算符返回的一定是 Boolean 值。<br>逻辑 NOT 运算符的行为如下： </p>
+<pre><code>•    如果运算数是对象，返回 false
+•    如果运算数是数字 0，返回 true
+•    如果运算数是 0 以外的任何数字，返回 false
+•    如果运算数是 null，返回 true
+•    如果运算数是 NaN，返回 true
+•    如果运算数是 undefined，发生错误
+</code></pre><p>位运算 NOT </p>
+<h3 id="十一、二元操作符"><a href="#十一、二元操作符" class="headerlink" title="十一、二元操作符"></a>十一、二元操作符</h3><p>&amp;&amp; 、||、+、-、x、/ </p>
+<p>加法运算符<br>与乘性运算符一样，在处理特殊值时，ECMAScript 中的加法也有一些特殊行为：</p>
+<pre><code>•    某个运算数是 NaN，那么结果为 NaN。
+•    -Infinity 加 -Infinity，结果为 -Infinity。
+•    Infinity 加 -Infinity，结果为 NaN。
+•    +0 加 +0，结果为 +0。
+•    -0 加 +0，结果为 +0。
+•    -0 加 -0，结果为 -0。
+</code></pre><p>不过，如果某个运算数是字符串，那么采用下列规则： </p>
+<pre><code>•    如果两个运算数都是字符串，把第二个字符串连接到第一个上。
+•    如果只有一个运算数是字符串，把另一个运算数转换成字符串，结果是两个字符串连接成的字符串
+•    注意：为了避免 JavaScript 中的一种常见错误，在使用加法运算符时，一定要仔细检查运算数的数据类型。  减法运算符  
+</code></pre><p>在处理特殊值时，减法运算符也有一些特殊行为： </p>
+<pre><code>•    某个运算数是 NaN，那么结果为 NaN。
+•    Infinity 减 Infinity，结果为 NaN。
+•    -Infinity 减 -Infinity，结果为 NaN。
+•    Infinity 减 -Infinity，结果为 Infinity。
+•    -Infinity 减 Infinity，结果为 -Infinity。
+•    +0 减 +0，结果为 +0。
+•    -0 减 -0，结果为 -0。
+•    +0 减 -0，结果为 +0。
+•    某个运算符不是数字，那么结果为 NaN。
+</code></pre><p>逻辑 AND 运算符( &amp;&amp; ),逻辑 AND 运算的运算数可以是任何类型的，不止是 Boolean 值。</p>
+<p>如果某个运算数不是原始的 Boolean 型值，逻辑 AND 运算并不一定返回 Boolean 值： </p>
+<pre><code>•    如果一个运算数是对象，另一个是 Boolean 值，返回该对象。
+•    如果两个运算数都是对象，返回第二个对象。
+•    如果某个运算数是 null，返回 null。
+•    如果某个运算数是 NaN，返回 NaN。
+•    如果某个运算数是 undefined，发生错误。
+</code></pre><p>逻辑 OR 运算符( || )<br>与逻辑 AND 运算符相似，如果某个运算数不是 Boolean 值，逻辑 OR 运算并不一定返回 Boolean 值：</p>
+<pre><code>•    如果一个运算数是对象，并且该对象左边的运算数值均为 false，则返回该对象。
+•    如果两个运算数都是对象，返回第一个对象。
+•    如果最后一个运算数是 null，并且其他运算数值均为 false，则返回 null。
+•    如果最后一个运算数是 NaN，并且其他运算数值均为 false，则返回 NaN。
+•    如果某个运算数是 undefined，发生错误。
+</code></pre><p>undefined，null，数字+booleal = 转换成数字<br>数字（boolean）+ “字符串” = 字符串，加法操作更偏向于字符串的操作<br>对象+对象（原始lqx）=<br>对象-&gt;原始值：先valueOf 后toString（），Date对象除外，直接调用Date对象的toString（）方法 </p>
+<p>关系运算符<code>&lt; &gt;</code>返回的结果是boolean类型，更偏向于数字的操作,任何包含 NaN 的关系运算符都要返回 false </p>
+<p>ECMAScript 提供了两套等性运算符：等号和非等号用于处理原始值，全等号和非全等号用于处理对象。<br>===全等： 数据类型和值完全一致<br>== 相等：undefined==null，数字，字符串，boolean类型进行比较时，先转换为数字再进行比较,<br>等号和非等号( == , != )<br>在 ECMAScript 中，等号由双等号（<code>==</code>）表示，当且仅当两个运算数相等时，它返回 true。非等号由感叹号加等号（!=）表示，当且仅当两个运算数不相等时，它返回 true。为确定两个运算数是否相等，这两个运算符都会进行类型转换。<br>执行类型转换的规则如下： </p>
+<pre><code>•    如果一个运算数是 Boolean 值，在检查相等性之前，把它转换成数字值。false 转换成 0，true 为 1。
+•    如果一个运算数是字符串，另一个是数字，在检查相等性之前，要尝试把字符串转换成数字。
+•    如果一个运算数是对象，另一个是字符串，在检查相等性之前，要尝试把对象转换成字符串。
+•    如果一个运算数是对象，另一个是数字，在检查相等性之前，要尝试把对象转换成数字。
+</code></pre><p>在比较时，该运算符还遵守下列规则： </p>
+<pre><code>•    值 null 和 undefined 相等。
+•    在检查相等性时，不能把 null 和 undefined 转换成其他值。
+•    如果某个运算数是 NaN，等号将返回 false，非等号将返回 true。
+•    如果两个运算数都是对象，那么比较的是它们的引用值。如果两个运算数指向同一对象，那么等号返回 true，否则两个运算数不等。
+</code></pre><p>重要提示：即使两个数都是 NaN，等号仍然返回 false，因为根据规则，NaN 不等于 NaN。<br>全等号和非全等号<br>全等号由三个等号表示（===），只有在无需类型转换运算数就相等的情况下，才返回 true。 </p>
+<p>赋值运算： +=、+、-、*、/、% </p>
+<p>空语句：；只有一个分号的语句，<br>声明语句：<br>     1、var 定义 一个变量，不能用delete删除的；var a = 1，b，c = 2；b=undefined，变量提前，把所有需要用到的变                    量都首先定义出来<br>     2、function ：function json(){}，先去运行一个函数，再去定义一个函数，解释器会把这个函数的定义放到最顶上<br>     定义函数的两种方法： <code>function 名字（）{}</code>，整个函数体都会被提前到最顶上<br>      <code>var a = funA      funA =  () =&gt; {}</code> 只有变量会被提前，函数还是在原来的位置上<br>在if语句，while语句和for循环中，尽量把声明函数的过程放到整个代码的最顶上<br>分支语句 </p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/03/05/陪你读书-第十期总结/" data-id="cizw5yv4q0000aowvzdoq57iv" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/基础/">基础</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/03/05/AngularJS ui-select用法/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">AngularJS ui-select用法</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AngularJS/">AngularJS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ui-select/">ui-select</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/基础/">基础</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/AngularJS/" style="font-size: 10px;">AngularJS</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/ui-select/" style="font-size: 10px;">ui-select</a> <a href="/tags/基础/" style="font-size: 10px;">基础</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/03/05/陪你读书-第十期总结/">陪你读书-JS-第十期总结</a>
+          </li>
+        
+          <li>
+            <a href="/2017/03/05/AngularJS ui-select用法/">AngularJS ui-select用法</a>
+          </li>
+        
+          <li>
+            <a href="/2016/12/30/Angular2 问题总结/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2016/11/13/first/">小静</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
