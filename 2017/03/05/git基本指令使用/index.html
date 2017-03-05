@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>git基本指令使用 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="git log 打印Git(下文中的—-均为2个-) 
+1. 执行git pull 命令的时候，如果本地有改动没有commit，就会提示错误 “error: Cannot pull with rebase:You have unstaged changes.”">
+<meta property="og:type" content="article">
+<meta property="og:title" content="git基本指令使用">
+<meta property="og:url" content="http://yoursite.com/2017/03/05/git基本指令使用/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="git log 打印Git(下文中的—-均为2个-) 
+1. 执行git pull 命令的时候，如果本地有改动没有commit，就会提示错误 “error: Cannot pull with rebase:You have unstaged changes.”">
+<meta property="og:updated_time" content="2017-03-05T09:35:21.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="git基本指令使用">
+<meta name="twitter:description" content="git log 打印Git(下文中的—-均为2个-) 
+1. 执行git pull 命令的时候，如果本地有改动没有commit，就会提示错误 “error: Cannot pull with rebase:You have unstaged changes.”">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-git基本指令使用" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/03/05/git基本指令使用/" class="article-date">
+  <time datetime="2017-03-05T09:35:12.000Z" itemprop="datePublished">2017-03-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      git基本指令使用
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>git log 打印<br>Git(下文中的—-均为2个-) </p>
+<h3 id="1-执行git-pull-命令的时候，如果本地有改动没有commit，"><a href="#1-执行git-pull-命令的时候，如果本地有改动没有commit，" class="headerlink" title="1. 执行git pull 命令的时候，如果本地有改动没有commit，"></a>1. 执行git pull 命令的时候，如果本地有改动没有commit，</h3><p>就会提示错误 “error: Cannot pull with rebase:<br>You have unstaged changes.”<br><a id="more"></a><br>git status </p>
+<p>   git stash<br>   git pull —-rebase origin master<br>   git stash pop  </p>
+<p>   当然如果你不需要本地的这些改动了，可以做如下命令<br>   git reset —-hard(需谨慎)<br>   git pull —-rebase origin master </p>
+<p>   git reset 是针对某个版本，如果想针对文件回退本地修改，使用<br>   git checkout HEAD file/to/restore </p>
+<h3 id="2-git-rebase-冲突"><a href="#2-git-rebase-冲突" class="headerlink" title="2. git rebase 冲突"></a>2. git rebase 冲突</h3><p>step 1. 使用git status命令，查看有哪些文件冲突，然后逐个解决<br>step 2. 打开冲突文件，找到冲突的位置，比如 </p>
+<p>修改用户信息后发送事件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD </div><div class="line">b789 </div><div class="line">======= </div><div class="line">b45678910 </div><div class="line">&gt;&gt;&gt;&gt;&gt;&gt;&gt; 6853e5ff961e684d3a6c02d4d06183b5ff330dcc </div><div class="line">c</div></pre></td></tr></table></figure></p>
+<p>冲突标记&lt;&lt;&lt;&lt;&lt;&lt;&lt; （7个&lt;）与=======之间的内容是本地修改，<br>=======与&gt;&gt;&gt;&gt;&gt;&gt;&gt;之间的内容是别人的修改。 </p>
+<p>step 3. 最简单的方式：删除这些冲突标记，然后查看是否有相同的代码，删除即可。<br>step 4. git add .  git commit -m “fix conflict”<br>step 5. git rebase —-continue<br>step 6. 如果还是有冲突，重复step2-step5<br>step 7. 完成 </p>
+<p>注意：DateUtil </p>
+<p>添加一些命令<br>git rebase —-abort(冲突之后，如果想回到rebase之前的状态) </p>
+<h3 id="3-分支管理"><a href="#3-分支管理" class="headerlink" title="3. 分支管理"></a>3. 分支管理</h3><p>git branch test   新建分支（test）<br>git branch -d test 删除分支（test）<br>git branch -D test 强制删除分支（test）<br>git checkout test 切换到test分支（test）<br>git branch 查看本地分支<br>git branch -r 查看服务器远程分支<br>git branch -a 查看本地和远程分支 </p>
+<p>新建分支后先提交到远程服务器才能pull代码， </p>
+<p>git push origin test  提交到远程服务器（test） </p>
+<h3 id="4-git-merge-git-cherry-pick"><a href="#4-git-merge-git-cherry-pick" class="headerlink" title="4. git merge   git cherry-pick"></a>4. git merge   git cherry-pick</h3><p>git merge: 合并两个分支，所有内容  git merge master，将master上所有内容合并到当前分支 </p>
+<p>git cherry-pick 选择合并一个或者多个commit<br>比如要从A分支合并某个commit到B分支，A—&gt;B,步骤如下<br>step 1: A分支下，git log获取某个commit-id<br>step 2: 切换到B分支，git checkout B(执行该命令前一定要保证A分支没有未提交的改动，或未stash的改动)<br>step 3: B分支下，执行 git cherry-pick {commit-id}<br>step 4: 执行git pull  git push 将改动提交到远程分支 </p>
+<p>如我在A分支修改了某个文件，需要同时提交到A分支和B分支，操作如下<br>A分支下<br>git add .<br>git commit -m “{commit comment}”<br>git pull -—rebase origin A<br>git push origin A </p>
+<p>git log<br>git status<br>git checkout B<br>已经切换到B分支<br>切换到B分支后，首先要去远程B分支获取到最新内容<br>git pull —-rebase origin B<br>git cherry-pick {commit-id}<br>git pull —-rebase origin B<br>git push origin B </p>
+<h3 id="5-git-tag-标签"><a href="#5-git-tag-标签" class="headerlink" title="5. git tag(标签)"></a>5. git tag(标签)</h3><p>建议只在主分支打tag，而且每次打tag都以版本发布之后为节点 </p>
+<h3 id="6-Git-Flow"><a href="#6-Git-Flow" class="headerlink" title="6. Git Flow"></a>6. Git Flow</h3><p>branch和tag的完美结合<br>版本发布 yes  持续发布no  多版本同时维护 no </p>
+<h3 id="7-Github-Flow"><a href="#7-Github-Flow" class="headerlink" title="7. Github Flow"></a>7. Github Flow</h3><h3 id="8-Gitlab-Flow上游优先"><a href="#8-Gitlab-Flow上游优先" class="headerlink" title="8. Gitlab Flow上游优先"></a>8. Gitlab Flow上游优先</h3><p><a href="http://www.ruanyifeng.com/blog/2015/12/git-workflow.html" target="_blank" rel="external">http://www.ruanyifeng.com/blog/2015/12/git-workflow.html</a><br><a href="http://www.cnblogs.com/cnblogsfans/p/5075073.html" target="_blank" rel="external">http://www.cnblogs.com/cnblogsfans/p/5075073.html</a></p>
+<h3 id="9、git-commit-—amend-“修改commit的描述”"><a href="#9、git-commit-—amend-“修改commit的描述”" class="headerlink" title="9、git commit —amend -“修改commit的描述”"></a>9、git commit —amend -“修改commit的描述”</h3>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/03/05/git基本指令使用/" data-id="cizwheupk0003uswv6nsoz7ho" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/03/05/mac 快捷键/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Récent</strong>
+      <div class="article-nav-title">
+        
+          mac 快捷键
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/03/05/陪你读书-第十期总结/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ancien</strong>
+      <div class="article-nav-title">陪你读书-JS-第十期总结</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Mot-clés</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AngularJS/">AngularJS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/AngularJS2/">AngularJS2</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ReactNative/">ReactNative</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mac/">mac</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ui-select/">ui-select</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/基础/">基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/快捷键/">快捷键</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/总结/">总结</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Nuage de mot-clés</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/AngularJS/" style="font-size: 10px;">AngularJS</a> <a href="/tags/AngularJS2/" style="font-size: 10px;">AngularJS2</a> <a href="/tags/ReactNative/" style="font-size: 10px;">ReactNative</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/mac/" style="font-size: 10px;">mac</a> <a href="/tags/ui-select/" style="font-size: 10px;">ui-select</a> <a href="/tags/基础/" style="font-size: 10px;">基础</a> <a href="/tags/快捷键/" style="font-size: 10px;">快捷键</a> <a href="/tags/总结/" style="font-size: 10px;">总结</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Articles récents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/03/05/React Native问题总结/">ReactNative 问题总结</a>
+          </li>
+        
+          <li>
+            <a href="/2017/03/05/mac 快捷键/">mac 快捷键</a>
+          </li>
+        
+          <li>
+            <a href="/2017/03/05/git基本指令使用/">git基本指令使用</a>
+          </li>
+        
+          <li>
+            <a href="/2017/03/05/陪你读书-第十期总结/">陪你读书-JS-第十期总结</a>
+          </li>
+        
+          <li>
+            <a href="/2017/03/05/AngularJS ui-select用法/">AngularJS ui-select用法</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe<br>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

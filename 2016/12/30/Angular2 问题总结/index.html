@@ -3,24 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Hexo</title>
+  <title>AngularJS 2 问题总结 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="AngularJS 2 问题总结
-出现“An invalid form control with name=’’ is not focusable”：查看是否form中的button都设置了type属性，如果未设置，会出现点击“enter”键，form自动关闭的问题，从而进一步引发这个问题 
-必须要先判断phoneNumber.errors存在与否，才能取phoneNumber.errors.r">
+  <meta name="description" content="出现“An invalid form control with name=’’ is not focusable”：查看是否form中的button都设置了type属性，如果未设置，会出现点击“enter”键，form自动关闭的问题，从而进一步引发这个问题 
+必须要先判断phoneNumber.errors存在与否，才能取phoneNumber.errors.required，否则会出错（req">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo">
+<meta property="og:title" content="AngularJS 2 问题总结">
 <meta property="og:url" content="http://yoursite.com/2016/12/30/Angular2 问题总结/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="AngularJS 2 问题总结
-出现“An invalid form control with name=’’ is not focusable”：查看是否form中的button都设置了type属性，如果未设置，会出现点击“enter”键，form自动关闭的问题，从而进一步引发这个问题 
-必须要先判断phoneNumber.errors存在与否，才能取phoneNumber.errors.r">
-<meta property="og:updated_time" content="2017-03-05T03:26:06.000Z">
+<meta property="og:description" content="出现“An invalid form control with name=’’ is not focusable”：查看是否form中的button都设置了type属性，如果未设置，会出现点击“enter”键，form自动关闭的问题，从而进一步引发这个问题 
+必须要先判断phoneNumber.errors存在与否，才能取phoneNumber.errors.required，否则会出错（req">
+<meta property="og:updated_time" content="2017-03-05T09:45:18.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
-<meta name="twitter:description" content="AngularJS 2 问题总结
-出现“An invalid form control with name=’’ is not focusable”：查看是否form中的button都设置了type属性，如果未设置，会出现点击“enter”键，form自动关闭的问题，从而进一步引发这个问题 
-必须要先判断phoneNumber.errors存在与否，才能取phoneNumber.errors.r">
+<meta name="twitter:title" content="AngularJS 2 问题总结">
+<meta name="twitter:description" content="出现“An invalid form control with name=’’ is not focusable”：查看是否form中的button都设置了type属性，如果未设置，会出现点击“enter”键，form自动关闭的问题，从而进一步引发这个问题 
+必须要先判断phoneNumber.errors存在与否，才能取phoneNumber.errors.required，否则会出错（req">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -58,9 +55,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -72,17 +69,26 @@
         <section id="main"><article id="post-Angular2 问题总结" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/12/30/Angular2 问题总结/" class="article-date">
-  <time datetime="2016-12-30T14:12:26.000Z" itemprop="datePublished">2016-12-30</time>
+  <time datetime="2016-12-30T09:40:50.000Z" itemprop="datePublished">2016-12-30</time>
 </a>
     
   </div>
   <div class="article-inner">
     
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      AngularJS 2 问题总结
+    </h1>
+  
+
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <hr>
-<h2 id="AngularJS-2-问题总结"><a href="#AngularJS-2-问题总结" class="headerlink" title="AngularJS 2 问题总结"></a>AngularJS 2 问题总结</h2><ol>
+        <ol>
 <li>出现“An invalid form control with name=’’ is not focusable”：查看是否form中的button都设置了type属性，如果未设置，会出现点击“enter”键，form自动关闭的问题，从而进一步引发这个问题 </li>
 <li>必须要先判断phoneNumber.errors存在与否，才能取phoneNumber.errors.required，否则会出错（required is null）<a id="more"></a></li>
 <li>Angular2使用pattern时，正则表达式的”//“必须去掉，即由</li>
@@ -93,9 +99,11 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/12/30/Angular2 问题总结/" data-id="cixbvry9k0000z1wvs9y5k8y2" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/12/30/Angular2 问题总结/" data-id="cixbvry9k0000z1wvs9y5k8y2" class="article-share-link">Partager</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/AngularJS2/">AngularJS2</a></li></ul>
+
     </footer>
   </div>
   
@@ -103,7 +111,7 @@
 <nav id="article-nav">
   
     <a href="/2017/03/05/AngularJS ui-select用法/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
+      <strong class="article-nav-caption">Récent</strong>
       <div class="article-nav-title">
         
           AngularJS ui-select用法
@@ -111,11 +119,6 @@
       </div>
     </a>
   
-  
-    <a href="/2016/11/13/first/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">小静</div>
-    </a>
   
 </nav>
 
@@ -131,9 +134,9 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
+    <h3 class="widget-title">Mot-clés</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AngularJS/">AngularJS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ui-select/">ui-select</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/基础/">基础</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AngularJS/">AngularJS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/AngularJS2/">AngularJS2</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ReactNative/">ReactNative</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mac/">mac</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ui-select/">ui-select</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/基础/">基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/快捷键/">快捷键</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/总结/">总结</a></li></ul>
     </div>
   </div>
 
@@ -141,9 +144,9 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
+    <h3 class="widget-title">Nuage de mot-clés</h3>
     <div class="widget tagcloud">
-      <a href="/tags/AngularJS/" style="font-size: 10px;">AngularJS</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/ui-select/" style="font-size: 10px;">ui-select</a> <a href="/tags/基础/" style="font-size: 10px;">基础</a>
+      <a href="/tags/AngularJS/" style="font-size: 10px;">AngularJS</a> <a href="/tags/AngularJS2/" style="font-size: 10px;">AngularJS2</a> <a href="/tags/ReactNative/" style="font-size: 10px;">ReactNative</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/mac/" style="font-size: 10px;">mac</a> <a href="/tags/ui-select/" style="font-size: 10px;">ui-select</a> <a href="/tags/基础/" style="font-size: 10px;">基础</a> <a href="/tags/快捷键/" style="font-size: 10px;">快捷键</a> <a href="/tags/总结/" style="font-size: 10px;">总结</a>
     </div>
   </div>
 
@@ -152,7 +155,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li></ul>
     </div>
   </div>
 
@@ -160,9 +163,21 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">Articles récents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2017/03/05/React Native问题总结/">ReactNative 问题总结</a>
+          </li>
+        
+          <li>
+            <a href="/2017/03/05/mac 快捷键/">mac 快捷键</a>
+          </li>
+        
+          <li>
+            <a href="/2017/03/05/git基本指令使用/">git基本指令使用</a>
+          </li>
         
           <li>
             <a href="/2017/03/05/陪你读书-第十期总结/">陪你读书-JS-第十期总结</a>
@@ -170,14 +185,6 @@
         
           <li>
             <a href="/2017/03/05/AngularJS ui-select用法/">AngularJS ui-select用法</a>
-          </li>
-        
-          <li>
-            <a href="/2016/12/30/Angular2 问题总结/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2016/11/13/first/">小静</a>
           </li>
         
       </ul>
@@ -193,7 +200,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2017 John Doe<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>

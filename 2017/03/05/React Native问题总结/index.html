@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>ReactNative 问题总结 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="1、把View的flex设为1就会充满整个父view，好棒好棒2、点击的高亮颜色：underlayColor=”#a5a5a5”3、如何让image充满父view：https://github.com/facebook/react-native/issues/9504、https://github.com/facebook/react-native/issues/8732">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ReactNative 问题总结">
+<meta property="og:url" content="http://yoursite.com/2017/03/05/React Native问题总结/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="1、把View的flex设为1就会充满整个父view，好棒好棒2、点击的高亮颜色：underlayColor=”#a5a5a5”3、如何让image充满父view：https://github.com/facebook/react-native/issues/9504、https://github.com/facebook/react-native/issues/8732">
+<meta property="og:updated_time" content="2017-03-05T09:54:59.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ReactNative 问题总结">
+<meta name="twitter:description" content="1、把View的flex设为1就会充满整个父view，好棒好棒2、点击的高亮颜色：underlayColor=”#a5a5a5”3、如何让image充满父view：https://github.com/facebook/react-native/issues/9504、https://github.com/facebook/react-native/issues/8732">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-React Native问题总结" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/03/05/React Native问题总结/" class="article-date">
+  <time datetime="2017-03-05T09:50:50.000Z" itemprop="datePublished">2017-03-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      ReactNative 问题总结
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>1、把View的flex设为1就会充满整个父view，好棒好棒<br>2、点击的高亮颜色：<br>underlayColor=”#a5a5a5”<br>3、如何让image充满父view：<a href="https://github.com/facebook/react-native/issues/950" target="_blank" rel="external">https://github.com/facebook/react-native/issues/950</a><br>4、<a href="https://github.com/facebook/react-native/issues/8732" target="_blank" rel="external">https://github.com/facebook/react-native/issues/8732</a><br><a id="more"></a><br>5、borderTopWidth for tabBarStyle does not work well if it is set to decimal fraction on iPhone 6/6s Plus<br>//用shadow制作上划线<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">shadowColor: '#c9c9c9',</div><div class="line">shadowOffset: &#123;</div><div class="line">    width: 0,</div><div class="line">    height: -0.5,</div><div class="line">&#125;,</div><div class="line">shadowOpacity: 1, </div><div class="line">shadowRadius: 0,</div></pre></td></tr></table></figure></p>
+<p>6、获取屏幕的高宽 </p>
+<p><text>宽度：<code>{Dimensions.get(&#39;window&#39;).width}</code></text> </p>
+<p><text>高度：<code>{Dimensions.get(&#39;window&#39;).height}</code></text><br>7、在安卓中设置textInput的underlineColorAndroid string<br>文本框的下划线颜色(译注：如果要去掉文本框的边框，请将此属性设为透明transparent)。即<br>underlineColorAndroid=”transparent”<br>8、经常出现，this.refs.scroll.scrollTo…(this.refs.scroll is not undefined)原因就真的是undefined，如果用到了this，考虑执行的函数中是不是this的作用于不对，如果是函数的话，要记得在函数后面.bind(this)；<br>9、若有ListView无法显示的情况，尽管对ListView设置了height，flex=1都没有用，请注意是否设置了ListView的父View的flex和height，比如<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;View style=&#123;&#123;flex: 1&#125;&#125;&gt;</div><div class="line">  &lt;ListView/&gt; </div><div class="line">&lt;/View&gt;</div></pre></td></tr></table></figure></p>
+<p>在此处已经吃了好几次亏，找了一晚上的bug才找出来，谨记谨记<br>10、在自定义的组件里面慎用flex = 1，特别是小组件，否则会出现排班错乱的情况， 比如citymedia中的<br>MFHorizontalCell中的cellContainer中用了flex = 1<br>11、在写XX的react 版本中，在写单纯的订单列表组件时，如果在listView的外层再嵌套一个scrollView，则会使listView的<br>onEndReached方法不执行<br>12、在使用phonegap调用系统相册、相机发现是英文的系统相簿界面后标题显示“photos”，但是手机语言已经设置显示中文，纠结半天，最终在info.plist设置解决问题，我反正闲着也是没事于是就搜索了下相关的资料,发现在项目的info.plist里面添加Localized resources can be mixed YES（表示是否允许应用程序获取框架库内语言）即可解决这个问题。特此记录下以便以后查看和别人解决问题<br>13、有的插件需要link到原生项目中，比如<em>react-native-image-picker</em>安装后只需添加一句<code>react-native link</code>即可,<br>14、react native 添加文字阴影<br>//文字阴影<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">textShadowOffset: &#123;</div><div class="line">    width: 1,</div><div class="line">    height: 1</div><div class="line">&#125;,</div><div class="line">textShadowRadius: 1, </div><div class="line">textShadowColor: &apos;#000&apos;,</div></pre></td></tr></table></figure></p>
+<p>7:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">&lt;DefaultTabBar tabs=&#123;[&quot;你好&quot;, &quot;我好&quot;, &quot;大家好&quot;]&#125;</div><div class="line">               scrollValue=&#123;self.state.scrollValue&#125;</div><div class="line">               goToPage=&#123;(page) =&gt; &#123;</div><div class="line">                   self.setState(&#123;</div><div class="line">                       selectedTagIndex: page</div><div class="line">                   &#125;)</div><div class="line">                   self.state.scrollValue.setValue(page);</div><div class="line">               &#125;&#125;</div><div class="line">               activeTextColor=&#123;&quot;#06c1ae&quot;&#125;</div><div class="line">               inactiveTextColor=&#123;&quot;#333&quot;&#125;</div><div class="line">               tabStyle=&#123;&#123;paddingTop: px2dp(10), borderWidth: px2dp(1), borderColor: &apos;red&apos;,borderRadius:px2dp(2)&#125;&#125;</div><div class="line">               underlineStyle=&#123;&#123;height: 2,backgroundColor: &apos;#06c1ae&apos;&#125;&#125;</div><div class="line">               activeTab=&#123;self.state.selectedTagIndex&#125;</div><div class="line">               containerWidth=&#123; Metrics.screenWidth &#125;</div><div class="line">               style=&#123;&#123;height: 40,&#125;&#125;</div><div class="line"></div><div class="line">/&gt;</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/03/05/React Native问题总结/" data-id="cizwhtham000euswvwfxd3otr" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ReactNative/">ReactNative</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/总结/">总结</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/03/05/mac 快捷键/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ancien</strong>
+      <div class="article-nav-title">mac 快捷键</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Mot-clés</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AngularJS/">AngularJS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/AngularJS2/">AngularJS2</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ReactNative/">ReactNative</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mac/">mac</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ui-select/">ui-select</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/基础/">基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/快捷键/">快捷键</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/总结/">总结</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Nuage de mot-clés</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/AngularJS/" style="font-size: 10px;">AngularJS</a> <a href="/tags/AngularJS2/" style="font-size: 10px;">AngularJS2</a> <a href="/tags/ReactNative/" style="font-size: 10px;">ReactNative</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/mac/" style="font-size: 10px;">mac</a> <a href="/tags/ui-select/" style="font-size: 10px;">ui-select</a> <a href="/tags/基础/" style="font-size: 10px;">基础</a> <a href="/tags/快捷键/" style="font-size: 10px;">快捷键</a> <a href="/tags/总结/" style="font-size: 10px;">总结</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Articles récents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/03/05/React Native问题总结/">ReactNative 问题总结</a>
+          </li>
+        
+          <li>
+            <a href="/2017/03/05/mac 快捷键/">mac 快捷键</a>
+          </li>
+        
+          <li>
+            <a href="/2017/03/05/git基本指令使用/">git基本指令使用</a>
+          </li>
+        
+          <li>
+            <a href="/2017/03/05/陪你读书-第十期总结/">陪你读书-JS-第十期总结</a>
+          </li>
+        
+          <li>
+            <a href="/2017/03/05/AngularJS ui-select用法/">AngularJS ui-select用法</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe<br>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
