@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Angular 日期本地化 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Angular 日期本地化，以“angular-datepicker”为例 
+（1）安装“angular-datepicker”，bower install angular-datepicker —save，其中“—save”表示在安装这个插件的时候会把这个插件所依赖的其他插件也安装进去，比如这个插件依赖bootstrap，那么它就会把bootstrap也安装，并且别人下载了你的bower.jso">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Angular 日期本地化">
+<meta property="og:url" content="http://yoursite.com/2017/03/05/AngularJS1 日期本地化/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Angular 日期本地化，以“angular-datepicker”为例 
+（1）安装“angular-datepicker”，bower install angular-datepicker —save，其中“—save”表示在安装这个插件的时候会把这个插件所依赖的其他插件也安装进去，比如这个插件依赖bootstrap，那么它就会把bootstrap也安装，并且别人下载了你的bower.jso">
+<meta property="og:updated_time" content="2017-03-08T06:39:30.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Angular 日期本地化">
+<meta name="twitter:description" content="Angular 日期本地化，以“angular-datepicker”为例 
+（1）安装“angular-datepicker”，bower install angular-datepicker —save，其中“—save”表示在安装这个插件的时候会把这个插件所依赖的其他插件也安装进去，比如这个插件依赖bootstrap，那么它就会把bootstrap也安装，并且别人下载了你的bower.jso">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-AngularJS1 日期本地化" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/03/05/AngularJS1 日期本地化/" class="article-date">
+  <time datetime="2017-03-05T09:50:50.000Z" itemprop="datePublished">2017-03-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Angular 日期本地化
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Angular 日期本地化，以“angular-datepicker”为例 </p>
+<h3 id="（1）安装“angular-datepicker”，bower-install-angular-datepicker-—save，"><a href="#（1）安装“angular-datepicker”，bower-install-angular-datepicker-—save，" class="headerlink" title="（1）安装“angular-datepicker”，bower install angular-datepicker —save，"></a>（1）安装“angular-datepicker”，bower install angular-datepicker —save，</h3><p>其中“—save”表示在安装这个插件的时候会把这个插件所依赖的其他插件也安装进去，比如这个插件依赖bootstrap，那么它就会把bootstrap也安装，并且别人下载了你的bower.json文件时，也会在依赖中出现，别人<code>bower install</code>的时候，会自动安装这个依赖。<br><a id="more"></a></p>
+<h3 id="（2）其次，基本上很多的datepicker插件都依赖于moment-js，"><a href="#（2）其次，基本上很多的datepicker插件都依赖于moment-js，" class="headerlink" title="（2）其次，基本上很多的datepicker插件都依赖于moment.js，"></a>（2）其次，基本上很多的datepicker插件都依赖于moment.js，</h3><p>所以你还要安装moment，即 <code>bower install moment —save</code> 或者 <code>npm install moment --save</code></p>
+<h3 id="（3）把相关的js文件引入到HTML中："><a href="#（3）把相关的js文件引入到HTML中：" class="headerlink" title="（3）把相关的js文件引入到HTML中："></a>（3）把相关的js文件引入到HTML中：</h3><p><code>index.html</code><br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"bower_components/angular-datepicker/dist/angular-datepicker.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"bower_components/moment/moment.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"bower_components/moment/locale/zh-cn.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>请关注“zh-cn.js”，其为你要本地化成的语言，如不引入的话将为“en”，即英语显示；然后把datepicker指令注入到你的angular App中，以“angular-datepicker”为例<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">angular.module(<span class="string">'myApp'</span>, [<span class="string">'datePicker'</span>,<span class="string">'ui.bootstrap'</span>]);</div></pre></td></tr></table></figure></p>
+<h3 id="（4）需要一个angular本地化的js文件，名曰：angular-locale-zh-hans-cn-js，然后引入到你的项目中。"><a href="#（4）需要一个angular本地化的js文件，名曰：angular-locale-zh-hans-cn-js，然后引入到你的项目中。" class="headerlink" title="（4）需要一个angular本地化的js文件，名曰：angular-locale_zh-hans-cn.js，然后引入到你的项目中。"></a>（4）需要一个angular本地化的js文件，名曰：angular-locale_zh-hans-cn.js，然后引入到你的项目中。</h3><p><code>index.html</code><br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"js/angular-locale_zh-hans-cn.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p><code>angular-locale_zh-hans-cn.js</code><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div></pre></td><td class="code"><pre><div class="line"><span class="string">'use strict'</span>;</div><div class="line">angular.module(<span class="string">"ngLocale"</span>, [], [<span class="string">"$provide"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">$provide</span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> PLURAL_CATEGORY = &#123;<span class="attr">ZERO</span>: <span class="string">"zero"</span>, <span class="attr">ONE</span>: <span class="string">"one"</span>, <span class="attr">TWO</span>: <span class="string">"two"</span>, <span class="attr">FEW</span>: <span class="string">"few"</span>, <span class="attr">MANY</span>: <span class="string">"many"</span>, <span class="attr">OTHER</span>: <span class="string">"other"</span>&#125;;</div><div class="line">  $provide.value(<span class="string">"$locale"</span>, &#123;</div><div class="line">    <span class="string">"DATETIME_FORMATS"</span>: &#123;</div><div class="line">      <span class="string">"AMPMS"</span>: [</div><div class="line">        <span class="string">"\u4e0a\u5348"</span>,</div><div class="line">        <span class="string">"\u4e0b\u5348"</span></div><div class="line">      ],</div><div class="line">      <span class="string">"DAY"</span>: [</div><div class="line">        <span class="string">"\u661f\u671f\u65e5"</span>,</div><div class="line">        <span class="string">"\u661f\u671f\u4e00"</span>,</div><div class="line">        <span class="string">"\u661f\u671f\u4e8c"</span>,</div><div class="line">        <span class="string">"\u661f\u671f\u4e09"</span>,</div><div class="line">        <span class="string">"\u661f\u671f\u56db"</span>,</div><div class="line">        <span class="string">"\u661f\u671f\u4e94"</span>,</div><div class="line">        <span class="string">"\u661f\u671f\u516d"</span></div><div class="line">      ],</div><div class="line">      <span class="string">"ERANAMES"</span>: [</div><div class="line">        <span class="string">"\u516c\u5143\u524d"</span>,</div><div class="line">        <span class="string">"\u516c\u5143"</span></div><div class="line">      ],</div><div class="line">      <span class="string">"ERAS"</span>: [</div><div class="line">        <span class="string">"\u516c\u5143\u524d"</span>,</div><div class="line">        <span class="string">"\u516c\u5143"</span></div><div class="line">      ],</div><div class="line">      <span class="string">"FIRSTDAYOFWEEK"</span>: <span class="number">6</span>,</div><div class="line">      <span class="string">"MONTH"</span>: [</div><div class="line">        <span class="string">"\u4e00\u6708"</span>,</div><div class="line">        <span class="string">"\u4e8c\u6708"</span>,</div><div class="line">        <span class="string">"\u4e09\u6708"</span>,</div><div class="line">        <span class="string">"\u56db\u6708"</span>,</div><div class="line">        <span class="string">"\u4e94\u6708"</span>,</div><div class="line">        <span class="string">"\u516d\u6708"</span>,</div><div class="line">        <span class="string">"\u4e03\u6708"</span>,</div><div class="line">        <span class="string">"\u516b\u6708"</span>,</div><div class="line">        <span class="string">"\u4e5d\u6708"</span>,</div><div class="line">        <span class="string">"\u5341\u6708"</span>,</div><div class="line">        <span class="string">"\u5341\u4e00\u6708"</span>,</div><div class="line">        <span class="string">"\u5341\u4e8c\u6708"</span></div><div class="line">      ],</div><div class="line">      <span class="string">"SHORTDAY"</span>: [</div><div class="line">        <span class="string">"\u5468\u65e5"</span>,</div><div class="line">        <span class="string">"\u5468\u4e00"</span>,</div><div class="line">        <span class="string">"\u5468\u4e8c"</span>,</div><div class="line">        <span class="string">"\u5468\u4e09"</span>,</div><div class="line">        <span class="string">"\u5468\u56db"</span>,</div><div class="line">        <span class="string">"\u5468\u4e94"</span>,</div><div class="line">        <span class="string">"\u5468\u516d"</span></div><div class="line">      ],</div><div class="line">      <span class="string">"SHORTMONTH"</span>: [</div><div class="line">        <span class="string">"1\u6708"</span>,</div><div class="line">        <span class="string">"2\u6708"</span>,</div><div class="line">        <span class="string">"3\u6708"</span>,</div><div class="line">        <span class="string">"4\u6708"</span>,</div><div class="line">        <span class="string">"5\u6708"</span>,</div><div class="line">        <span class="string">"6\u6708"</span>,</div><div class="line">        <span class="string">"7\u6708"</span>,</div><div class="line">        <span class="string">"8\u6708"</span>,</div><div class="line">        <span class="string">"9\u6708"</span>,</div><div class="line">        <span class="string">"10\u6708"</span>,</div><div class="line">        <span class="string">"11\u6708"</span>,</div><div class="line">        <span class="string">"12\u6708"</span></div><div class="line">      ],</div><div class="line">      <span class="string">"STANDALONEMONTH"</span>: [</div><div class="line">        <span class="string">"\u4e00\u6708"</span>,</div><div class="line">        <span class="string">"\u4e8c\u6708"</span>,</div><div class="line">        <span class="string">"\u4e09\u6708"</span>,</div><div class="line">        <span class="string">"\u56db\u6708"</span>,</div><div class="line">        <span class="string">"\u4e94\u6708"</span>,</div><div class="line">        <span class="string">"\u516d\u6708"</span>,</div><div class="line">        <span class="string">"\u4e03\u6708"</span>,</div><div class="line">        <span class="string">"\u516b\u6708"</span>,</div><div class="line">        <span class="string">"\u4e5d\u6708"</span>,</div><div class="line">        <span class="string">"\u5341\u6708"</span>,</div><div class="line">        <span class="string">"\u5341\u4e00\u6708"</span>,</div><div class="line">        <span class="string">"\u5341\u4e8c\u6708"</span></div><div class="line">      ],</div><div class="line">      <span class="string">"WEEKENDRANGE"</span>: [</div><div class="line">        <span class="number">5</span>,</div><div class="line">        <span class="number">6</span></div><div class="line">      ],</div><div class="line">      <span class="string">"fullDate"</span>: <span class="string">"y\u5e74M\u6708d\u65e5EEEE"</span>,</div><div class="line">      <span class="string">"longDate"</span>: <span class="string">"y\u5e74M\u6708d\u65e5"</span>,</div><div class="line">      <span class="string">"medium"</span>: <span class="string">"y\u5e74M\u6708d\u65e5 ah:mm:ss"</span>,</div><div class="line">      <span class="string">"mediumDate"</span>: <span class="string">"y\u5e74M\u6708d\u65e5"</span>,</div><div class="line">      <span class="string">"mediumTime"</span>: <span class="string">"ah:mm:ss"</span>,</div><div class="line">      <span class="string">"short"</span>: <span class="string">"y/M/d ah:mm"</span>,</div><div class="line">      <span class="string">"shortDate"</span>: <span class="string">"y/M/d"</span>,</div><div class="line">      <span class="string">"shortTime"</span>: <span class="string">"ah:mm"</span></div><div class="line">    &#125;,</div><div class="line">    <span class="string">"NUMBER_FORMATS"</span>: &#123;</div><div class="line">      <span class="string">"CURRENCY_SYM"</span>: <span class="string">"\u00a5"</span>,</div><div class="line">      <span class="string">"DECIMAL_SEP"</span>: <span class="string">"."</span>,</div><div class="line">      <span class="string">"GROUP_SEP"</span>: <span class="string">","</span>,</div><div class="line">      <span class="string">"PATTERNS"</span>: [</div><div class="line">        &#123;</div><div class="line">          <span class="string">"gSize"</span>: <span class="number">3</span>,</div><div class="line">          <span class="string">"lgSize"</span>: <span class="number">3</span>,</div><div class="line">          <span class="string">"maxFrac"</span>: <span class="number">3</span>,</div><div class="line">          <span class="string">"minFrac"</span>: <span class="number">0</span>,</div><div class="line">          <span class="string">"minInt"</span>: <span class="number">1</span>,</div><div class="line">          <span class="string">"negPre"</span>: <span class="string">"-"</span>,</div><div class="line">          <span class="string">"negSuf"</span>: <span class="string">""</span>,</div><div class="line">          <span class="string">"posPre"</span>: <span class="string">""</span>,</div><div class="line">          <span class="string">"posSuf"</span>: <span class="string">""</span></div><div class="line">        &#125;,</div><div class="line">        &#123;</div><div class="line">          <span class="string">"gSize"</span>: <span class="number">3</span>,</div><div class="line">          <span class="string">"lgSize"</span>: <span class="number">3</span>,</div><div class="line">          <span class="string">"maxFrac"</span>: <span class="number">2</span>,</div><div class="line">          <span class="string">"minFrac"</span>: <span class="number">2</span>,</div><div class="line">          <span class="string">"minInt"</span>: <span class="number">1</span>,</div><div class="line">          <span class="string">"negPre"</span>: <span class="string">"-\u00a4"</span>,</div><div class="line">          <span class="string">"negSuf"</span>: <span class="string">""</span>,</div><div class="line">          <span class="string">"posPre"</span>: <span class="string">"\u00a4"</span>,</div><div class="line">          <span class="string">"posSuf"</span>: <span class="string">""</span></div><div class="line">        &#125;</div><div class="line">      ]</div><div class="line">    &#125;,</div><div class="line">    <span class="string">"id"</span>: <span class="string">"zh-cn"</span>,</div><div class="line">    <span class="string">"localeID"</span>: <span class="string">"zh_CN"</span>,</div><div class="line">    <span class="string">"pluralCat"</span>: <span class="function"><span class="keyword">function</span>(<span class="params">n, opt_precision</span>) </span>&#123;  <span class="keyword">return</span> PLURAL_CATEGORY.OTHER;&#125;</div><div class="line">  &#125;);</div><div class="line">&#125;]);</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/03/05/AngularJS1 日期本地化/" data-id="cj00lcup70000fbs6yu81d20m" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/AngularJS/">AngularJS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日期本地化/">日期本地化</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/03/05/React Native问题总结/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          ReactNative 问题总结
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/03/05/mac 快捷键/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">mac 快捷键</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AngularJS/">AngularJS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/AngularJS2/">AngularJS2</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ReactNative/">ReactNative</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mac/">mac</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ui-select/">ui-select</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/基础/">基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/快捷键/">快捷键</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/总结/">总结</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日期本地化/">日期本地化</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/AngularJS/" style="font-size: 20px;">AngularJS</a> <a href="/tags/AngularJS2/" style="font-size: 10px;">AngularJS2</a> <a href="/tags/ReactNative/" style="font-size: 10px;">ReactNative</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/mac/" style="font-size: 10px;">mac</a> <a href="/tags/ui-select/" style="font-size: 10px;">ui-select</a> <a href="/tags/基础/" style="font-size: 10px;">基础</a> <a href="/tags/快捷键/" style="font-size: 10px;">快捷键</a> <a href="/tags/总结/" style="font-size: 10px;">总结</a> <a href="/tags/日期本地化/" style="font-size: 10px;">日期本地化</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/03/05/React Native问题总结/">ReactNative 问题总结</a>
+          </li>
+        
+          <li>
+            <a href="/2017/03/05/AngularJS1 日期本地化/">Angular 日期本地化</a>
+          </li>
+        
+          <li>
+            <a href="/2017/03/05/mac 快捷键/">mac 快捷键</a>
+          </li>
+        
+          <li>
+            <a href="/2017/03/05/git基本指令使用/">git基本指令使用</a>
+          </li>
+        
+          <li>
+            <a href="/2017/03/05/陪你读书-第十期总结/">陪你读书-JS-第十期总结</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
